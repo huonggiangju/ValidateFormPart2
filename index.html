@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="form" >
+            <div class="fieldset">
+                <fieldset>
+                    <legend>Customer detail</legend>
+                    <div >
+                        <label for="">First name</label>
+                        <input type="text" id="firstName" placeholder="First name" onblur="validateFirstName()" onfocus="setBgd(this)">
+                        <span class="errorMessage"></span>  
+                    </div>
+                    <div>
+                        <label for="">Last name</label>
+                        <input type="text" id="lastName" placeholder="Last name" onblur="validateLastName()" onfocus="setBgd(this)">
+                        <span class="errorMessage"></span>
+                    </div>
+                    <div>
+                        <label for="">Post Code</label>
+                        <input type="text" id="postCode" placeholder="1234" onblur="validatePostcode()" onfocus="setBgd(this)">
+                        <span class="errorMessage"></span>
+                    </div>
+                    <div>
+                        <label for="">Email</label>
+                        <input type="text" id="email" placeholder="abc@gmail.com" onblur="validateEmail()" onfocus="setBgd(this)">
+                        <span class="errorMessage"></span>
+                    </div>         
+                </fieldset>
+            </div>
+            <div class="fieldset">
+                <fieldset>
+                    <legend>Payment detail</legend>
+                    <div>
+                        <label for="">Credit Card</label>
+                        <select id="creditCard" onblur="validateCreditCard()">
+                            <option value = "" selected> Choose your card</option>           
+                            <option value="Visa">Visa</option>
+                            <option value="Master Card">Master Card</option>
+                            <option value="American Express">American Express</option>
+                        </select>
+                        <br>
+                        <span id="creditCardErrorMessage"></span>
+                    </div>
+                    <div>
+                        <label for="">Card number</label>
+                        <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" onblur="validateCardNumber()" onfocus="setBgd(this)">
+                        <span class="errorMessage"></span>
+                    </div>
+                    <div>
+                        <label for="">CCV</label>
+                        <input type="text" id="ccv" placeholder="123" onblur="validateCCV()" onfocus="setBgd(this)">
+                        <span class="errorMessage"></span>
+                    </div>
+                    <div>
+                        <label for="">Expiry MM/YY</label>
+                        <select name="" id="month" onblur="return expiryValidate()">
+                            <option value = "" selected> Month </option>
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <span> / </span>
+                        <select name="" id="year" onblur="return expiryValidate()">
+                            <option value = "" selected> Year </option>
+                            <option value="2020">19</option>
+                            <option value="2020">20</option>
+                            <option value="2021">21</option>
+                            <option value="2022">22</option>
+                            <option value="2023">23</option>
+                            <option value="2024">24</option>
+                            <option value="2025">25</option>
+                        </select>
+                        <br>
+                        <span id="expiryError"></span>
+                    </div>
+                </fieldset>
+            </div>
+            
+            <input class="button" type="button" onclick="checkInput()" value="Submit">
+            <input class="button" type="button" onclick="help()" value="Help">
+            <input class="button" type="button" onclick="redirect()" value="GO TO OTHER WEBSITES">
+            
+        </form>
+    </div>
+    
+    <script src="./js/validateForm.js"></script>
+</body>
+</html>
